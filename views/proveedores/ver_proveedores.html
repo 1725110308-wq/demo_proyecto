@@ -1,13 +1,19 @@
-
-<h1>CONTACTOS</h1>
-<form action="POST">
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" id="nombre" readonly> <br>
-    <label for="tipo">Tipo</label>
-    <input type="text" name="tipo" id="tipo" readonly> <br>
-    <label for="clase">Clase</label>
-    <input type="text" name="calse" id="clase" readonly> <br>
-    <label for="nombre_neg">Negocio al que pertenece</label>
-    <input type="text" name="nombre_neg" id="nombre_neg" readonly>
-    
-</form>
+$def with (proveedores)
+<h1>LISTA DE PROVEEDORES</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Tipo de producto</th>
+        <th>Clase de producto</th>
+        <th>Distribuidor</th>
+    </tr>
+    $for proveedor in proveedores
+        <tr>
+            <th>$proveedor['id_proveedor']</th>
+            <th>$proveedor['nombre']</th>
+            <th>$proveedor['tipo']</th>
+            <th>$proveedor['clase']</th>
+            <th>$proveedor['nombre_neg']</th>
+        </tr>
+</table>
