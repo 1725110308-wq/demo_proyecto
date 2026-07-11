@@ -1,1 +1,18 @@
-<h1>hola</h1>
+$def with (nombre,tipo,clase,nombre_neg)
+<h1>CONTACTOS</h1>
+<form method="post">
+    <label for="nombre">Nombre</label> <br>
+    <input type="text" name="nombre" id="nombre" value=$nombre> <br>
+
+    <label for="tipo">Tipo</label><br>
+    <input type="text" name="tipo" id="tipo" value=$tipo> <br>
+
+    <label for="clase">Clase</label><br>
+    <input type="text" name="calse" id="clase" value=$clase> <br>
+
+    <label for="nombre_neg">Negocio al que pertenece</label><br>
+    <input type="text" name="nombre_neg" id="nombre_neg" value=$nombre_neg> <br>
+    
+    <a href="/ver_proveedores"><button type="button">Volver</button></a>
+    <button>Añadir</button>
+</form>

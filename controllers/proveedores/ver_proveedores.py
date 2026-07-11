@@ -8,7 +8,7 @@ class VerProveedores:
             conexion = sqlite3.connect("sql/ferretariasaul.db")
             conexion.row_factory = sqlite3.Row
             cursor = conexion.cursor()
-            query = "SELECT * FROM proveedores"
+            query = "SELECT * FROM proveedores;"
             cursor.execute(query)
             resultado = cursor.fetchall()
             datos = []

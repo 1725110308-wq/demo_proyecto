@@ -10,7 +10,7 @@ class BorrarProveedores:
             cursor=conexion.cursor()
             id_proveedor=proveedor
             query="""DELETE FROM proveedores
-                     where id_proveedor=?"""
+                     where id_proveedor=?;"""
             cursor.execute(query,(id_proveedor),)
             conexion.commit()
             conexion.close
