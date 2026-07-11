@@ -1,5 +1,5 @@
 import web
-render = web.template.render('views/proveedores')
+render = web.template.render('views/proveedores',base='layout')
 
 class VerProveedores:
     def GET(self):
