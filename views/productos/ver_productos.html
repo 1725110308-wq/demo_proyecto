@@ -1,11 +1,24 @@
+$def with (productos)
 <!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Controladores</title>
+    <title>Lista de Productos</title>
   </head>
   <body>
-    <h1>Revisa los productos que tenemos</h1>
+
+    <h1>Lista de Productos</h1>
+
+    $for producto in productos:
+        <p>
+          <b>ID:</b> $producto['id_productos'] <br>
+          <b>Precio:</b> $producto['precio'] <br>
+          <b>Cantidad:</b> $producto['cantidad'] <br>
+          <b>Calidad:</b> $producto['calidad'] <br>
+          <b>Descripción:</b> $producto['descripcion']
+        </p>
+        <hr>
+
+    <a href="/">Volver al Inicio</a>
+
   </body>
 </html>
