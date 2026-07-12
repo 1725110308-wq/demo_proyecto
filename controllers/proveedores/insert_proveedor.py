@@ -7,10 +7,10 @@ class InsertProveedor:
             conexion=sqlite3.connect('sql/ferretariasaul.db')
             conexion.row_factory=sqlite3.Row
             cursor=conexion.cursor()
-            nombre=proveedor['nombre']
-            tipo=proveedor['tipo']
-            clase=proveedor['clase']
-            nombre_neg=proveedor['nombre_neg']
+            nombre=proveedor["nombre"]
+            tipo=proveedor["tipo"]
+            clase=proveedor["clase"]
+            nombre_neg=proveedor["nombre_neg"]
             query="""insert into proveedores(nombre,tipo,clase,nombre_neg)
             values(?,?,?,?);"""
             datos=(
@@ -40,7 +40,7 @@ class InsertProveedor:
         }
         resultado=self.insertProveedor(proveedor)
         web.ctx.status = '303 See Other'
-        web.header('Location', '/lista_contactos')
+        web.header('Location', '/ver_proveedores')
         return ''
 
     def GET(self):
