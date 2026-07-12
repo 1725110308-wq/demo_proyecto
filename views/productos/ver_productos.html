@@ -1,24 +1,30 @@
 $def with (productos)
-<!doctype html>
-<html>
-  <head>
-    <title>Lista de Productos</title>
-  </head>
-  <body>
-
-    <h1>Lista de Productos</h1>
-
-    $for producto in productos:
-        <p>
-          <b>ID:</b> $producto['id_productos'] <br>
-          <b>Precio:</b> $producto['precio'] <br>
-          <b>Cantidad:</b> $producto['cantidad'] <br>
-          <b>Calidad:</b> $producto['calidad'] <br>
-          <b>Descripción:</b> $producto['descripcion']
-        </p>
-        <hr>
-
-    <a href="/">Volver al Inicio</a>
-
-  </body>
-</html>
+<h1>Lista de Productos</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Calidad</th>
+            <th>Descripcion</th>
+            <th>Borrar Producto</th>
+        </tr>
+    </thead>
+    <tbody>
+        $for producto in productos:
+            <tr>
+                <td>$producto['id_productos']</td>
+                <td>$producto['precio']</td>
+                <td>$producto['cantidad']</td>
+                <td>$producto['calidad']</td>
+                <td>$producto['descripcion']</td>
+                <td><a href="/borrar_productos/$producto['id_productos']">
+                        <button>Borrar producto</button></a></td>
+            </tr>
+    </tbody>
+</table>
+<p>Añadir producto</p>
+<a href="/insertar_producto"><button>Añadir</button></a>
+<br>
+<a href="/">Volver al Inicio</a>
