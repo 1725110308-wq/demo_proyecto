@@ -1,0 +1,22 @@
+$def with (proveedor)
+<h1>Proveedor</h1>
+<form method="post">
+
+    <label for="id_proveedor">ID</label><br>
+    <input type="text" name="id_proveedor" id="id_proveedor" value=$proveedor['id_proveedor']> <br>
+
+    <label for="nombre">Nombre</label> <br>
+    <input type="text" name="nombre" id="nombre" value=$proveedor['nombre']> <br>
+
+    <label for="tipo">Tipo</label><br>
+    <input type="text" name="tipo" id="tipo" value=$proveedor['tipo']> <br>
+
+    <label for="clase">Clase</label><br>
+    <input type="text" name="calse" id="clase" value=$proveedor['clase']> <br>
+
+    <label for="nombre_neg">Negocio al que pertenece</label><br>
+    <input type="text" name="nombre_neg" id="nombre_neg" value=$proveedor['nombre_neg']> <br>
+    
+    <a href="/ver_proveedores"><button type="button">Volver</button></a>
+    <button>Editar</button>
+</form>

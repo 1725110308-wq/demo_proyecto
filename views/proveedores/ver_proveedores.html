@@ -1,6 +1,6 @@
 $def with (proveedores)
 <h1>LISTA DE PROVEEDORES</h1>
-<table>
+<table border="1">
     <tr>
         <th>ID</th>
         <th>Nombre</th>
@@ -16,9 +16,11 @@ $def with (proveedores)
             <th>$proveedor['tipo']</th>
             <th>$proveedor['clase']</th>
             <th>$proveedor['nombre_neg']</th>
-            <th><a href="/borrar_proveedores/$proveedor['id_proveedor']"><button>borrar</button></a></th>
+            <th><a href="/borrar_proveedores/$proveedor['id_proveedor']"><button>Borrar</button></a>
+                <a href="/edit_proveedor/$proveedor['id_proveedor']"><button>Editar</button></a>
+            </th>
         </tr>
 </table>
-<p>Añadir proveedor</p>
 <a href="/"><button>Regresar</button></a>
+<p>Añadir proveedor</p>
 <a href="/insert_proveedor"><button>Añadir</button></a>

@@ -5,7 +5,7 @@ render = web.template.render('views')
 
 class VerProducto:
     def GET(self):
-        conexion = sqlite3.connect("sql/ferreteriakory.db")
+        conexion = sqlite3.connect("sql/ferreteriakor.db")
         conexion.row_factory = sqlite3.Row
         cursor = conexion.cursor()
         
