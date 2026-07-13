@@ -1,14 +1,12 @@
 import web
 import sqlite3
 
-# Configurado para renderizar las vistas de la carpeta clientes
 render = web.template.render('views/clientes', base='layout')
 
 class EditarCliente:
 
     def actualizarCliente(self, cliente: dict) -> bool:
         try:
-            # Conexión a la base de datos de clientes
             conexion = sqlite3.connect("sql/ferreteriajakob.db")
             conexion.row_factory = sqlite3.Row
             cursor = conexion.cursor()
@@ -20,7 +18,6 @@ class EditarCliente:
             telefono = cliente["telefono"]
             email = cliente["email"]
 
-            # Query para actualizar los datos del cliente
             query = """UPDATE clientes 
                 SET nombre = ?,
                 primer_apellido = ?,
@@ -63,7 +60,6 @@ class EditarCliente:
             if resultado is None:
                 return {}
 
-            # Mapeamos los datos del cliente basándonos en tu estructura original
             cliente = {
                 "id_clientes": resultado[0],
                 "nombre": resultado[1],
@@ -86,7 +82,6 @@ class EditarCliente:
     def GET(self, id_cliente: int):
         print(f"id del cliente a editar: {id_cliente}")
         cliente = self.mostrarCliente(id_cliente)
-        # Retorna el formulario de edición de clientes lleno
         return render.edit_clientes(cliente)
 
     def POST(self, id_cliente: int):
@@ -100,10 +95,8 @@ class EditarCliente:
             "email": formulario['email']
         }
         
-        # Guardamos los cambios en la base de datos
         self.actualizarCliente(cliente)
         
-        # Redireccionamos a la lista de clientes
         web.ctx.status = '303 See Other'
         web.header('Location', '/ver_clientes')
         return ''
