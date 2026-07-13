@@ -32,12 +32,11 @@ class InsertarProductos:
             return False
         
     def GET(self):
-        productos = {
+        productos = 
             "precio": "",
             "cantidad": "",
             "calidad": "",
             "descripcion": ""
-        }
         return render.productos.insertar_producto(productos)
 
     def POST(self):
