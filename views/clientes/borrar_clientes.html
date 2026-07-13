@@ -1,0 +1,26 @@
+$def with (cliente)
+
+<h1>CLIENTE</h1>
+<form method="post">
+
+    <label for="id_clientes">ID</label><br>
+    <input type="text" name="id_clientes" id="id_clientes" value=$cliente['id_clientes'] readonly> <br>
+
+    <label for="nombre">Nombre</label><br>
+    <input type="text" name="nombre" id="nombre" value=$cliente['nombre'] readonly> <br>
+
+    <label for="primer_apellido">Primer Apellido</label><br>
+    <input type="text" name="primer_apellido" id="primer_apellido" value=$cliente['primer_apellido'] readonly> <br>
+
+    <label for="segundo_apellido">Segundo Apellido</label><br>
+    <input type="text" name="segundo_apellido" id="segundo_apellido" value=$cliente['segundo_apellido'] readonly> <br>
+
+    <label for="email">Email</label><br>
+    <input type="text" name="email" id="email" value=$cliente['email'] readonly> <br>
+
+    <label for="telefono">Teléfono</label><br>
+    <input type="text" name="telefono" id="telefono" value=$cliente['telefono'] readonly> <br>
+    
+    <a href="/ver_clientes"><button type="button">Volver</button></a>
+    <button>Borrar</button>
+</form>

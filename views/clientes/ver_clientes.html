@@ -1,1 +1,31 @@
-hola
+$def with (clientes)
+
+<h1>LISTA DE CLIENTES</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>nombre</th>
+        <th>primer Apellido</th>
+        <th>segundo Apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+    </tr>
+    $for cliente in clientes:
+        <tr>
+            <td>$cliente["id_clientes"]</td>
+            <td>$cliente["nombre"]</td>
+            <td>$cliente["primer_apellido"]</td>
+            <td>$cliente["segundo_apellido"]</td>
+            <td>$cliente["email"]</td>
+            <td>$cliente["telefono"]</td>
+            <td>
+                <a href="/borrar_clientes/$cliente['id_clientes']"><button>Borrar</button></a>
+                <a href="/edit_clientes/$cliente['id_clientes']"><button>Editar</button></a>
+            </td>
+        </tr>
+</table>
+
+<a href="/"><button>Regresar</button></a>
+<p>Añadir clientes</p>
+<a href="/insertar_clientes"><button>Añadir</button></a>

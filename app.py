@@ -2,6 +2,10 @@ import web
 
 urls = (
     '/', 'controllers.index.Index',
+    '/ver_clientes', 'controllers.clientes.ver_clientes.verclientes',
+    '/insertar_clientes', 'controllers.clientes.insertar_clientes.InsertCliente',
+    '/borrar_clientes/(.*)', 'controllers.clientes.borrar_clientes.BorrarClientes',
+    '/edit_clientes/(.*)', 'controllers.clientes.edit_clientes.EditarCliente',
     '/ver_proveedores', 'controllers.proveedores.ver_proveedores.VerProveedores',
     '/borrar_proveedores/(.*)', 'controllers.proveedores.borrar_proveedores.BorrarProveedores',
     '/insert_proveedor', 'controllers.proveedores.insert_proveedor.InsertProveedor',
