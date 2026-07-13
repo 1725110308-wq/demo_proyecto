@@ -1,0 +1,22 @@
+$def with (nombre, primer_apellido, segundo_apellido, telefono, email)
+
+<h1>CLIENTES</h1>
+<form method="post">
+    <label for="nombre">Nombre</label><br>
+    <input type="text" name="nombre" id="nombre" value=$nombre> <br>
+
+    <label for="primer_apellido">Primer Apellido</label><br>
+    <input type="text" name="primer_apellido" id="primer_apellido" value=$primer_apellido> <br>
+
+    <label for="segundo_apellido">Segundo Apellido</label><br>
+    <input type="text" name="segundo_apellido" id="segundo_apellido" value=$segundo_apellido> <br>
+
+    <label for="telefono">Teléfono</label><br>
+    <input type="text" name="telefono" id="telefono" value=$telefono> <br>
+
+    <label for="email">Email</label><br>
+    <input type="text" name="email" id="email" value=$email> <br>
+    
+    <a href="/ver_clientes"><button type="button">Volver</button></a>
+    <button>Añadir</button>
+</form>
