@@ -1,47 +1,50 @@
 import web
 import sqlite3
-
-render = web.template.render('views')
-
+render=web.template.render('views/productos',base='layout')
 class InsertarProductos:
-    def insertarproducto(self, productos: dict) -> bool:
+    def insertarProducto(self,producto: dict)->bool:
         try:
-            conexion = sqlite3.connect("sql/ferreteriakory.db") 
-            conexion.row_factory = sqlite3.Row
-            cursor = conexion.cursor()
-
-            precio = productos["precio"]
-            cantidad = productos["cantidad"]
-            calidad = productos["calidad"]
-            descripcion = productos["descripcion"]
-
-            query = """INSERT INTO productos (precio, cantidad, calidad, descripcion)
-                       VALUES (?, ?, ?, ?)"""
-            datos = (precio, cantidad, calidad, descripcion)
-
-            cursor.execute(query, datos)
+            conexion=sqlite3.connect('sql/ferreteriakory.db')
+            conexion.row_factory=sqlite3.Row
+            cursor=conexion.cursor()
+            precio=producto['precio']
+            cantidad=producto['cantidad']
+            calidad=producto['calidad']
+            descripcion=producto['descripcion']
+            query="""INSERT INTO productos(precio,cantidad,calidad,descripcion)
+                    values(?,?,?,?);"""
+            datos=(
+                precio,
+                cantidad,
+                calidad,
+                descripcion
+            )
+            cursor.execute(query,datos)
             conexion.commit()
             conexion.close()
             return True
-        
         except sqlite3.Error as error:
-            print(f"Error 1: {error.args}")
+            print(f"ERROR 13: {error.args}")
             return False
         except Exception as errror:
-            print(f"Error 2: {errror.args}")
-            return False
-        
+            print(f"Error 14: {errror.args}")
 
     def POST(self):
-        formulario = web.input()
-        
-        productos = {
-            "precio": formulario.get('precio', ''),
-            "cantidad": formulario.get('cantidad', ''),
-            "calidad": formulario.get('calidad', ''),
-            "descripcion": formulario.get('descripcion', '')
+        formulario=web.input()
+        producto={
+            "precio":formulario['precio'],
+            "cantidad":formulario['precio'],
+            "calidad":formulario['calidad'],
+            "descripcion":formulario['descripcion']
         }
+        resultado=self.insertarProducto(producto)
+        web.ctx.status = '303 See Other'
+        web.header('Location', '/ver_productos')
+        return ''
 
-        resultado = self.insertarproducto(productos)
-        
-        raise web.seeother('/ver_productos')
+    def GET(self):
+        precio=""
+        cantidad=""
+        calidad=""
+        descripcion=""
+        return render.insertar_producto(precio,cantidad,calidad,descripcion)
