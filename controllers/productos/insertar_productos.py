@@ -31,13 +31,6 @@ class InsertarProductos:
             print(f"Error 2: {errror.args}")
             return False
         
-    def GET(self):
-        productos = 
-            "precio": "",
-            "cantidad": "",
-            "calidad": "",
-            "descripcion": ""
-        return render.productos.insertar_producto(productos)
 
     def POST(self):
         formulario = web.input()
