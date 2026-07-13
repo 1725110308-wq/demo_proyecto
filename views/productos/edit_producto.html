@@ -1,0 +1,22 @@
+$def with (productos)
+<h1>productos</h1>
+<form method="post">
+
+    <label for="id_productos">ID</label><br>
+    <input type="text" name="id_productos" id="id_productos" value=$productos['id_productos']> <br>
+
+    <label for="precio">Precio</label> <br>
+    <input type="text" name="precio" id="precio" value=$productos['precio']> <br>
+
+    <label for="cantidad">Cantidad</label><br>
+    <input type="text" name="cantidad" id="cantidad" value=$productos['cantidad']> <br>
+
+    <label for="calidad">Calidad del producto</label><br>
+    <input type="text" name="calidad" id="calidad" value=$productos['calidad']> <br>
+
+    <label for="descripcion">Descripcion del producto</label><br>
+    <input type="text" name="descripcion" id="descripcion" value=$productos['descripcion']> <br>
+    
+    <a href="/ver_productos"><button type="button">Volver</button></a>
+    <button>Editar</button>
+</form>

@@ -8,7 +8,7 @@ $def with (productos)
             <th>Cantidad</th>
             <th>Calidad</th>
             <th>Descripcion</th>
-            <th>Borrar Producto</th>
+            <th>Más</th>
         </tr>
     </thead>
     <tbody>
@@ -19,7 +19,8 @@ $def with (productos)
                 <td>$producto['cantidad']</td>
                 <td>$producto['calidad']</td>
                 <td>$producto['descripcion']</td>
-                <td><a href="/borrar_productos/$producto['id_productos']"><button>Borrar producto</button></a>
+                <td><a href="/borrar_productos/$producto['id_productos']"><button>Borrar</button></a>
+                    <a href="/edit_producto/$producto['id_productos']"><button>Editar</button></a>
                 </td>
             </tr>
     </tbody>
