@@ -12,7 +12,8 @@ urls = (
     '/ver_productos','controllers.productos.ver_producto.VerProducto',
     '/edit_proveedor/(.*)', 'controllers.proveedores.edit_proveedor.EditProveedor',
     '/insertar_producto', 'controllers.productos.insertar_productos.InsertarProductos',
-     '/borrar_productos/(.*)', 'controllers.productos.borrar_productos.BorrarProducto'
+     '/borrar_productos/(.*)', 'controllers.productos.borrar_productos.BorrarProducto',
+     '/edit_producto/(.*)', 'controllers.productos.editar_productos.EditarProducto'
 )
 
 app = web.application(urls, globals())
