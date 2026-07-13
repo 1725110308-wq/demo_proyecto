@@ -1,0 +1,30 @@
+$def with (productos)
+<h1>Lista de Productos</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Calidad</th>
+            <th>Descripcion</th>
+            <th>Borrar Producto</th>
+        </tr>
+    </thead>
+    <tbody>
+        $for producto in productos:
+            <tr>
+                <td>$producto['id_productos']</td>
+                <td>$producto['precio']</td>
+                <td>$producto['cantidad']</td>
+                <td>$producto['calidad']</td>
+                <td>$producto['descripcion']</td>
+                <td><a href="/borrar_productos/$producto['id_productos']"><button>Borrar producto</button></a>
+                </td>
+            </tr>
+    </tbody>
+</table>
+<p>Añadir producto</p>
+<a href="/insertar_producto"><button>Añadir</button></a>
+<br>
+<a href="/">Volver al Inicio</a>
