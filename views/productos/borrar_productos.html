@@ -1,22 +1,24 @@
 $def with (productos)
-<h1>CONTACTOS</h1>
+<h1>Borrar Producto</h1>
 <form method="post">
 
     <label for="id_producto">ID</label><br>
-    <input type="text" name="id_producto" id="id_producto" value=$producto['id_producto'] readonly> <br>
+    <input type="text" name="id_productos" id="id_productos" value=$productos['id_productos'] readonly> <br>
 
     <label for="precio">Precio</label> <br>
-    <input type="text" name="precio" id="precio" value=$producto['precio'] readonly> <br>
+    <input type="text" name="precio" id="precio" value=$productos['precio'] readonly> <br>
 
     <label for="cantidad">Cantidad</label><br>
-    <input type="text" name="cantidad" id="cantidad" value=$producto['cantidad'] readonly> <br>
+    <input type="text" name="cantidad" id="cantidad" value=$productos['cantidad'] readonly> <br>
 
     <label for="calidad">Calidad</label><br>
-    <input type="text" name="calidad" id="calidad" value=$producto['calidad'] readonly> <br>
+    <input type="text" name="calidad" id="calidad" value=$productos['calidad'] readonly> <br>
 
     <label for="descripcion">Descripción</label><br>
-    <input type="text" name="descripcion" id="descripcion" value=$producto['descripcion'] readonly> <br>
+    <input type="text" name="descripcion" id="descripcion" value=$productos['descripcion'] readonly> <br>
     
     <a href="/ver_productos"><button type="button">Volver</button></a>
     <button>Borrar</button>
 </form>
+<br>
+<a href="/">Volver al Inicio</a>
