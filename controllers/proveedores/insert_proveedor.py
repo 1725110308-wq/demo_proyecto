@@ -4,7 +4,7 @@ render=web.template.render('views/proveedores',base='layout')
 class InsertProveedor:
     def insertProveedor(self,proveedor:dict)->bool:
         try:
-            conexion=sqlite3.connect('sql/ferretariasaul.db')
+            conexion=sqlite3.connect('sql/ferreteria.db')
             conexion.row_factory=sqlite3.Row
             cursor=conexion.cursor()
             nombre=proveedor["nombre"]

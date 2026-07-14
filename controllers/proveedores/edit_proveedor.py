@@ -4,7 +4,7 @@ render=web.template.render('views/proveedores',base='layout')
 class EditProveedor:
     def editProveedor(self, proveedor: dict)-> bool:
         try:
-            conexion=sqlite3.connect('sql/ferretariasaul.db')
+            conexion=sqlite3.connect('sql/ferreteria.db')
             conexion.row_factory=sqlite3.Row
             cursor=conexion.cursor()
             id_proveedor=proveedor['id_proveedor']
@@ -37,7 +37,7 @@ class EditProveedor:
             return False
     def mostrarProveedor(self,id_proveedor:int):
         try:
-            conexion=sqlite3.connect('sql/ferretariasaul.db')
+            conexion=sqlite3.connect('sql/ferreteria.db')
             conexion.row_factory=sqlite3.Row
             cursor=conexion.cursor()
             query="select * from proveedores where id_proveedor=?"
