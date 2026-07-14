@@ -4,7 +4,7 @@ render=web.template.render('views/productos',base='layout')
 class InsertarProductos:
     def insertarProducto(self,producto: dict)->bool:
         try:
-            conexion=sqlite3.connect('sql/ferreteriakory.db')
+            conexion=sqlite3.connect('sql/ferreteria.db')
             conexion.row_factory=sqlite3.Row
             cursor=conexion.cursor()
             precio=producto['precio']

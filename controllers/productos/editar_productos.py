@@ -4,7 +4,7 @@ render = web.template.render('views/productos', base='layout')
 class EditarProducto:
     def editarProducto(self,producto:dict)->bool:
         try:
-            conexion = sqlite3.connect('sql/ferreteriakory.db')
+            conexion = sqlite3.connect('sql/ferreteria.db')
             conexion.row_factory=sqlite3.Row
             cursor = conexion.cursor()
             id_productos = producto['id_productos']
@@ -31,7 +31,7 @@ class EditarProducto:
             return False
     def mostrarProducto(self,id_productos):
         try:
-            conexion = sqlite3.connect('sql/ferreteriakory.db')
+            conexion = sqlite3.connect('sql/ferreteria.db')
             conexion.row_factory=sqlite3.Row
             cursor = conexion.cursor()
             query="""SELECT * FROM productos

@@ -6,7 +6,7 @@ render = web.template.render('views/productos',base='layout')
 class BorrarProducto:
     def borrarProducto(self,producto)->bool:
         try:
-            conexion=sqlite3.connect('sql/ferreteriakory.db')
+            conexion=sqlite3.connect('sql/ferreteria.db')
             conexion.row_factory=sqlite3.Row
             cursor=conexion.cursor()
             id_producto=producto
@@ -24,7 +24,7 @@ class BorrarProducto:
         
     def mostrarProducto(self,id_productos):
         try:
-            conexion=sqlite3.connect('sql/ferreteriakory.db')
+            conexion=sqlite3.connect('sql/ferreteria.db')
             conexion.row_factory=sqlite3.Row
             cursor=conexion.cursor()
             query="SELECT * FROM productos where id_productos=?;"
