@@ -6,7 +6,7 @@ render = web.template.render('views/clientes', base='layout')
 class verclientes:
     def consultarClientes(self):
         try:
-            conexion = sqlite3.connect("sql/ferreteriajakob.db")
+            conexion = sqlite3.connect("sql/ferreteria.db")
             conexion.row_factory = sqlite3.Row
             cursor = conexion.cursor()
             query = "SELECT * FROM clientes;"

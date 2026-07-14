@@ -7,7 +7,7 @@ class EditarCliente:
 
     def actualizarCliente(self, cliente: dict) -> bool:
         try:
-            conexion = sqlite3.connect("sql/ferreteriajakob.db")
+            conexion = sqlite3.connect("sql/ferreteria.db")
             conexion.row_factory = sqlite3.Row
             cursor = conexion.cursor()
 
@@ -48,7 +48,7 @@ class EditarCliente:
 
     def mostrarCliente(self, id_cliente: int):
         try:
-            conexion = sqlite3.connect("sql/ferreteriajakob.db")
+            conexion = sqlite3.connect("sql/ferreteria.db")
             conexion.row_factory = sqlite3.Row
             cursor = conexion.cursor()
             

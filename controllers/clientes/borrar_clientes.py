@@ -6,7 +6,7 @@ render = web.template.render('views/clientes', base='layout')
 class BorrarClientes:
     def borrarCliente(self, cliente_id:int) -> bool:
         try:
-            conexion = sqlite3.connect("sql/ferreteriajakob.db")
+            conexion = sqlite3.connect("sql/ferreteria.db")
             conexion.row_factory = sqlite3.Row
             cursor = conexion.cursor()
             query = """DELETE FROM clientes WHERE id_clientes = ?;"""
@@ -23,7 +23,7 @@ class BorrarClientes:
 
     def mostrarCliente(self, id_cliente:int):
         try:
-            conexion = sqlite3.connect("sql/ferreteriajakob.db")
+            conexion = sqlite3.connect("sql/ferreteria.db")
             conexion.row_factory = sqlite3.Row
             cursor = conexion.cursor()
             query = "SELECT * FROM clientes WHERE id_clientes = ?;"
